@@ -14,3 +14,27 @@ To do this, count the number of times a depth measurement increases from the pre
 
 """
 
+# Add the input file into a list
+input_file = open('input.txt', 'r')
+input_list = []
+count = 0
+
+for line in input_file:
+    # Get rid of new line characters in the list and cast to int
+    input_list.append(int(line.replace('\n', '')))
+
+# Python way of working with indexes
+for index, val in enumerate(input_list):
+    if index == 0:
+        print(val, ' (N/A - no previous measurement)')
+    elif input_list[index] < input_list[index - 1]:
+        print(val, ' (decreased)')
+    else:
+        print(val, ' (increased)')
+        count += 1
+
+print("The total of measurements larger than the previous measurement is ", count)
+
+
+
+
