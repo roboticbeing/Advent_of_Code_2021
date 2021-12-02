@@ -36,5 +36,3 @@ for index, val in enumerate(input_list):
 print("The total of measurements larger than the previous measurement is ", count)
 
 
-
-
